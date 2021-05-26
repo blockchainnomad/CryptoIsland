@@ -1,0 +1,130 @@
+[
+  {
+    "id": 0,
+    "name": "Crypto Island",
+    "picture": "images/CryptoIsland.gif",
+    "age": 3,
+    "breed": "Scottish Terrier",
+    "location": "Lisco, Alabama"
+  },
+  {
+    "id": 1,
+    "name": "T-bin",
+    "picture": "images/Tbin.jpeg",
+    "age": 3,
+    "breed": "Scottish Terrier",
+    "location": "Tooleville, West Virginia"
+  },
+  {
+    "id": 2,
+    "name": "Nightmare 3",
+    "picture": "images/Nightmare.jpeg",
+    "age": 2,
+    "breed": "French Bulldog",
+    "location": "Freeburn, Idaho"
+  },
+  {
+    "id": 3,
+    "name": "I'm Hollo",
+    "picture": "images/Hollo.jpeg",
+    "age": 2,
+    "breed": "Boxer",
+    "location": "Camas, Pennsylvania"
+  },
+  {
+    "id": 4,
+    "name": "Nightmare 1",
+    "picture": "images/Fedora.jpg",
+    "age": 2,
+    "breed": "French Bulldog",
+    "location": "Gerber, South Dakota"
+  },
+  {
+    "id": 5,
+    "name": "Hoodie",
+    "picture": "images/Hoodie.jpg",
+    "age": 3,
+    "breed": "French Bulldog",
+    "location": "Innsbrook, Illinois"
+  },
+  {
+    "id": 6,
+    "name": "Nightmare 4",
+    "picture": "images/Roaming.jpg",
+    "age": 3,
+    "breed": "Golden Retriever",
+    "location": "Soudan, Louisiana"
+  },
+  {
+    "id": 7,
+    "name": "Bucket Hat Hollo",
+    "picture": "images/BucketHatHollo.jpg",
+    "age": 3,
+    "breed": "Golden Retriever",
+    "location": "Jacksonwald, Palau"
+  },
+  {
+    "id": 8,
+    "name": "Roaming",
+    "picture": "images/Roaming.jpg",
+    "age": 2,
+    "breed": "French Bulldog",
+    "location": "Honolulu, Hawaii"
+  },
+  {
+    "id": 9,
+    "name": "Minus",
+    "picture": "images/Minus.JPG",
+    "age": 3,
+    "breed": "Boxer",
+    "location": "Matheny, Utah"
+  },
+  {
+    "id": 10,
+    "name": "Mirror",
+    "picture": "images/Mirror.JPG",
+    "age": 2,
+    "breed": "Boxer",
+    "location": "Tyhee, Indiana"
+  },
+  {
+    "id": 11,
+    "name": "Mirrors",
+    "picture": "images/Mirrors.JPG",
+    "age": 3,
+    "breed": "Scottish Terrier",
+    "location": "Windsor, Montana"
+  },
+  {
+    "id": 12,
+    "name": "Performance",
+    "picture": "images/Performance.JPG",
+    "age": 3,
+    "breed": "French Bulldog",
+    "location": "Kingstowne, Nevada"
+  },
+  {
+    "id": 13,
+    "name": "Bus",
+    "picture": "images/Bus.JPG",
+    "age": 4,
+    "breed": "Golden Retriever",
+    "location": "Sultana, Massachusetts"
+  },
+  {
+    "id": 14,
+    "name": "Shower",
+    "picture": "images/Shower.JPG",
+    "age": 2,
+    "breed": "Golden Retriever",
+    "location": "Broadlands, Oregon"
+  },
+  {
+    "id": 15,
+    "name": "Flowerman",
+    "picture": "images/Flowerman.jpeg",
+    "age": 2,
+    "breed": "Golden Retriever",
+    "location": "Dawn, Wisconsin"
+  }
+]
