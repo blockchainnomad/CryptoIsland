@@ -67,25 +67,16 @@
   {
     "id": 13,
     "name": "Bus",
-    "picture": "images/Bus.jpg",
-    "age": 4,
-    "breed": "Golden Retriever",
-    "location": "Sultana, Massachusetts"
+    "picture": "images/Bus.jpg"
   },
   {
     "id": 14,
     "name": "Shower",
-    "picture": "images/Shower.jpg",
-    "age": 2,
-    "breed": "Golden Retriever",
-    "location": "Broadlands, Oregon"
+    "picture": "images/Shower.jpg"
   },
   {
     "id": 15,
     "name": "Flowerman",
-    "picture": "images/Flowerman.jpeg",
-    "age": 2,
-    "breed": "Golden Retriever",
-    "location": "Dawn, Wisconsin"
+    "picture": "images/Flowerman.jpeg"
   }
 ]
