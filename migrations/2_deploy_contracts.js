@@ -1,5 +1,5 @@
-var Adoption = artifacts.require("Adoption");
+var CryptoIsland = artifacts.require("CryptoIsland");
 
 module.exports = function(deployer) {
-  deployer.deploy(Adoption);
+  deployer.deploy(CryptoIsland);
 };

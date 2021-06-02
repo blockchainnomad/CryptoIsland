@@ -1,7 +1,7 @@
 {
-  "name": "pet-shop",
+  "name": "CryptoIsland",
   "version": "1.0.0",
-  "description": "",
+  "description": "An Art marketplace where NFT(non fungible token) art are traded",
   "main": "truffle.js",
   "directories": {
     "test": "test"
@@ -10,9 +10,12 @@
     "dev": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "blockchainnomad",
   "license": "ISC",
   "devDependencies": {
     "lite-server": "^2.3.0"
+  },
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^1.4.0"
   }
 }
