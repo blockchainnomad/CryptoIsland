@@ -1,4 +1,4 @@
-pragma solidity >=0.5.3;
+  pragma solidity >=0.4.24;
 
 contract CryptoIsland {
     address[16] public buyers;
@@ -18,3 +18,4 @@ contract CryptoIsland {
     }
 
 }
+

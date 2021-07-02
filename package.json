@@ -13,9 +13,12 @@
   "author": "blockchainnomad",
   "license": "ISC",
   "devDependencies": {
-    "lite-server": "^2.3.0"
+    "lite-server": "^2.6.1"
   },
   "dependencies": {
-    "@truffle/hdwallet-provider": "^1.4.0"
+    "@truffle/hdwallet-provider": "^1.4.0",
+    "solc": "^0.8.6",
+    "truffle": "^5.3.13",
+    "zeppelin-solidity": "^1.12.0"
   }
 }
