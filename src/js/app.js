@@ -126,7 +126,7 @@ App = {
   handleGetNFT: function(event) {
     event.preventDefault();
 
-    var amount = 10000000000;
+    // var amount = 10000000000;
 
     var NFTokenInstance;
 
@@ -135,13 +135,12 @@ App = {
         console.log(error);
       }
 
-      var toAddress = accounts[0];
       var account = accounts[0];
 
       App.contracts.NFToken.deployed().then(function(instance) {
         NFTokenInstance = instance;
 
-        return NFTokenInstance.transfer(toAddress, amount, {from: account});
+        return NFTokenInstance.buyToken(1,"woo",{from: account});
       }).then(function(result) {
         alert('NFT Transfer Successful!');
 
