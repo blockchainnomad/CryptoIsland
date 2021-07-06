@@ -4,6 +4,7 @@ import 'zeppelin-solidity/contracts/ownership/Ownable.sol';
 import 'zeppelin-solidity/contracts/token/ERC721/ERC721Token.sol';
 
 contract NFToken is ERC721Token, Ownable {
+  uint8 public decimals = 0;
 
   /*** EVENTS ***/
   /// The event emitted (useable by web3) when a token is purchased
@@ -26,14 +27,10 @@ contract NFToken is ERC721Token, Ownable {
   /// The title of the token
   mapping(uint256 => string) tokenTitles;
 
-  constructor() ERC721Token("CryptoIsland NFT", "NFT") public {
+  constructor() ERC721Token("CryptoIsland NFToken", "NFT") public {
     // any init code when you deploy the contract would run here
   }
 
-  /// Requires the amount of Ether be at least or more of the currentPrice
-  /// @dev Creates an instance of an token and mints it to the purchaser
-  /// @param _type The token type as an integer
-  /// @param _title The short title of the token
   function buyToken (uint256 _type, string _title) external payable {
     bytes memory _titleBytes = bytes(_title);
     require(_titleBytes.length >= TITLE_MIN_LENGTH, "Title is too short");

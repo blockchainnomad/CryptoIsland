@@ -136,11 +136,12 @@ App = {
       }
 
       var account = accounts[0];
+      var amount = web3.toWei('1','ether')
 
       App.contracts.NFToken.deployed().then(function(instance) {
         NFTokenInstance = instance;
 
-        return NFTokenInstance.buyToken(1,"woo",{from: account});
+        return NFTokenInstance.buyToken(1,"woo",{from: account, value: amount});
       }).then(function(result) {
         alert('NFT Transfer Successful!');
 
