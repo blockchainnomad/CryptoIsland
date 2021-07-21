@@ -21,7 +21,7 @@ App = {
   },
 
   initWeb3: async function() {
-      // Modern dapp browsers...
+    // Modern dapp browsers...
     if (window.ethereum) {
         App.web3Provider = window.ethereum;
         try {
@@ -40,10 +40,27 @@ App = {
     else {
         App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
     }
-        web3 = new Web3(App.web3Provider);
-    
+    web3 = new Web3(App.web3Provider);
 
-    return App.initContract();
+    return await App.SwitchChain();
+  },
+
+  SwitchChain: async function() {
+    // Switch to Ropsten
+    try {
+      const params = [{ chainId: '0x3' }]
+      await window.ethereum.request({
+        method: 'wallet_switchEthereumChain',
+        params: params
+      })
+      console.log('Network is Ropsten')
+    } catch(error) {
+      console.log(error)
+    }
+    window.ethereum.on('chainChanged', (chainId) => {
+      console.log(chainId) // 0x3 if it's Ropsten
+    })
+      return await App.initContract();
   },
 
   initContract: function() {
@@ -72,8 +89,6 @@ App = {
     return App.bindEvents();
   },
 
-
-
   markPurchased: function() {
     var purchaseInstance;
 
@@ -93,13 +108,40 @@ App = {
   },
 
   bindEvents: function() {
+    $(document).on('click', '#btn-buy', App.handleWatchAsset);
     $(document).on('click', '#btn-buy', App.handleBuy);
-    $(document).on('click', '#btn-buy', App.handleGetNFT);
+  },
+
+  handleWatchAsset: function(event) {
+    event.preventDefault();
+
+    const tokenAddress = '0x457017658a85d96e23b14a6e28eff1a40c85bb0f';
+    const tokenSymbol = 'NFT';
+    const tokenDecimals = 0.1;
+    const tokenImage = 'https://i.imgur.com/HhkhMwy.jpg';
+    
+    try {
+      const AddNFT = ethereum.request({
+          method: 'wallet_watchAsset',
+          params: {
+            type: 'ERC20',
+            options: {
+              address: tokenAddress,
+              symbol: tokenSymbol,
+              decimals: tokenDecimals,
+              image: tokenImage
+            },
+          },
+    });
+    } catch(error) {
+      console.log(error);
+    }
   },
 
   handleBuy: function(event) {
     event.preventDefault();
 
+    // Request Buy Transaction
     var artId = parseInt($(event.target).data('id'));
     var purchaseInstance;
 
@@ -121,13 +163,8 @@ App = {
         console.log(err.message);
       });
     });
-  },
 
-  handleGetNFT: function(event) {
-    event.preventDefault();
-
-    // var amount = 10000000000;
-
+    // Request NFT
     var NFTokenInstance;
 
     web3.eth.getAccounts(function(error, accounts) {
@@ -136,20 +173,19 @@ App = {
       }
 
       var account = accounts[0];
-      var amount = web3.toWei('1','ether')
+      var amount = web3.toWei('0.01','ether')
 
       App.contracts.NFToken.deployed().then(function(instance) {
         NFTokenInstance = instance;
 
-        return NFTokenInstance.buyToken(1,"woo",{from: account, value: amount});
+        return NFTokenInstance.buyToken(1,"NFT",{from: account, value: amount});
       }).then(function(result) {
         alert('NFT Transfer Successful!');
-
       }).catch(function(err) {
         console.log(err.message);
       });
     });
-  },
+  }
 };
 
 $(function() {
