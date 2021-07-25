@@ -1,10 +1,10 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const mnemonic = "your ethereum wallet mnemonic";
+const mnemonic = "your wallet mnemonic";
 
 module.exports = {
   compilers: {
     solc: {
-      version: "^0.4.24"
+      version: ">=0.6.0 < 0.8.0"
     } 
   },
   networks: {

@@ -3,7 +3,7 @@ App = {
   contracts: {},
 
   init: async function() {
-    // Load artworks.
+    // Load artworks.`'
     $.getJSON('../arts.json', function(data) {
       var artsRow = $('#artsRow');
       var artTemplate = $('#artTemplate');
@@ -17,8 +17,35 @@ App = {
       }
     });
 
-    return await App.initWeb3();
+    // return await App.initWeb3();
+    return await App.metamaskIntalled();
   },
+
+  metamaskIntalled: function() {
+        if (window.ethereum) {
+            handleEthereum();
+          } else {
+            window.addEventListener('ethereum#initialized', handleEthereum, {
+              once: true,
+            });
+          
+            // If the event is not dispatched by the end of the timeout,
+            // the user probably doesn't have MetaMask installed.
+            setTimeout(handleEthereum, 3000); // 3 seconds
+          }
+          
+          function handleEthereum() {
+            const { ethereum } = window;
+            if (ethereum && ethereum.isMetaMask) {
+              console.log('Ethereum successfully detected!');
+              // Access the decentralized web!
+            } else {
+              console.log('Please install MetaMask!');
+              window.open().location.replace("https://metamask.io");
+          }
+          return App.initWeb3();
+        }
+      },
 
   initWeb3: async function() {
     // Modern dapp browsers...
@@ -32,16 +59,12 @@ App = {
           console.error("User denied account access")
         }
       }
-    // Legacy dapp browsers...
-    else if (window.web3) {
-        App.web3Provider = window.web3.currentProvider;
-     }
     // If no injected web3 instance is detected, fall back to Ganache
     else {
         App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
     }
     web3 = new Web3(App.web3Provider);
-
+    
     return await App.SwitchChain();
   },
 
@@ -73,39 +96,22 @@ App = {
       App.contracts.Purchase.setProvider(App.web3Provider);
     
       // Use our contract to retrieve and mark the arts purchased
-      return App.markPurchased();
+      // return App.markPurchased();
     });
 
-    $.getJSON('NFToken.json', function(data) {
+    $.getJSON('NFT.json', function(data) {
       // Get the necessary contract artifact file and instantiate it with truffle-contract.
-      var NFTokenArtifact = data;
-      App.contracts.NFToken = TruffleContract(NFTokenArtifact);
+      var NFTArtifact = data;
+      App.contracts.NFT = TruffleContract(NFTArtifact);
 
       // Set the provider for our contract.
-      App.contracts.NFToken.setProvider(App.web3Provider);
+      App.contracts.NFT.setProvider(App.web3Provider);
 
     });
 
     return App.bindEvents();
   },
 
-  markPurchased: function() {
-    var purchaseInstance;
-
-    App.contracts.Purchase.deployed().then(function(instance) {
-      purchaseInstance = instance;
-
-      return purchaseInstance.getBuyers.call();
-    }).then(function(buyers) {
-      for (i = 0; i < buyers.length; i++) {
-        if (buyers[i] !== '0x0000000000000000000000000000000000000000') {
-          $('.panel-art').eq(i).find('button').text('Success').attr('disabled', true);
-        }
-      }
-    }).catch(function(err) {
-      console.log(err.message);
-    });
-  },
 
   bindEvents: function() {
     $(document).on('click', '#btn-buy', App.handleWatchAsset);
@@ -115,7 +121,7 @@ App = {
   handleWatchAsset: function(event) {
     event.preventDefault();
 
-    const tokenAddress = '0x457017658a85d96e23b14a6e28eff1a40c85bb0f';
+    const tokenAddress = '0x4c16bce8556bfea31ec4Cca82C5A935f6442C012';
     const tokenSymbol = 'NFT';
     const tokenDecimals = 0.1;
     const tokenImage = 'https://i.imgur.com/HhkhMwy.jpg';
@@ -137,48 +143,26 @@ App = {
       console.log(error);
     }
   },
-
   handleBuy: function(event) {
     event.preventDefault();
 
-    // Request Buy Transaction
-    var artId = parseInt($(event.target).data('id'));
-    var purchaseInstance;
-
-    web3.eth.getAccounts(function(error, accounts) {
-      if (error) {
-        console.log(error);
-      }
-
-      var account = accounts[0];
-
-      App.contracts.Purchase.deployed().then(function(instance) {
-        purchaseInstance = instance;
-
-        // Execute buy as a transaction by sending account
-        return purchaseInstance.buy(artId, {from: account});
-      }).then(function(result) {
-        return App.markPurchased();
-      }).catch(function(err) {
-        console.log(err.message);
-      });
-    });
-
     // Request NFT
-    var NFTokenInstance;
+    var NFTInstance;
 
     web3.eth.getAccounts(function(error, accounts) {
       if (error) {
         console.log(error);
       }
 
-      var account = accounts[0];
-      var amount = web3.toWei('0.01','ether')
+      const receiver = accounts[0];  
+      const amount = web3.toWei('0.01','ether')
+      const tokenId = 1
+      const tokenURI = "https://cryptoisland/dashboard/nft.json"
 
-      App.contracts.NFToken.deployed().then(function(instance) {
-        NFTokenInstance = instance;
+      App.contracts.NFT.deployed().then(function(instance) {
+        NFTInstance = instance;
 
-        return NFTokenInstance.buyToken(1,"NFT",{from: account, value: amount});
+        return NFTInstance.mintNft(receiver, tokenURI, {from: accounts[0]});
       }).then(function(result) {
         alert('NFT Transfer Successful!');
       }).catch(function(err) {

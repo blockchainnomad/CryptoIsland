@@ -1,9 +1,5 @@
-var CryptoIsland = artifacts.require("CryptoIsland");
-var NFToken = artifacts.require("NFToken");
-var Owned = artifacts.require("Owned");
+var NFT = artifacts.require("NFT");
 
 module.exports = function(deployer) {
-  deployer.deploy(CryptoIsland);
-  deployer.deploy(NFToken);
-  deployer.deploy(Owned);
+  deployer.deploy(NFT);
 };
