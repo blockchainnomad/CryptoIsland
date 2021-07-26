@@ -121,7 +121,7 @@ App = {
   handleWatchAsset: function(event) {
     event.preventDefault();
 
-    const tokenAddress = '0x8C726ceB922Cad29cb54cF40B34240d43ACB61aE';
+    const tokenAddress = '0xBC98AAA2cA2e82083ee4eAf736496E561A05BDC4';
     const tokenSymbol = 'NFT';
     const tokenDecimals = 0.1;
     const tokenImage = 'https://i.imgur.com/HhkhMwy.jpg';

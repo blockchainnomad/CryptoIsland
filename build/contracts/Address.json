@@ -8043,7 +8043,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.1",
-  "updatedAt": "2021-07-26T06:42:12.941Z",
+  "updatedAt": "2021-07-26T06:59:36.177Z",
   "devdoc": {
     "details": "Collection of functions related to the address type",
     "kind": "dev",
