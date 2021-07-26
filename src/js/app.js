@@ -121,7 +121,7 @@ App = {
   handleWatchAsset: function(event) {
     event.preventDefault();
 
-    const tokenAddress = '0x4c16bce8556bfea31ec4Cca82C5A935f6442C012';
+    const tokenAddress = '0xCa3deeaA60F489D22c025F918Fd84aABAe51ebB3';
     const tokenSymbol = 'NFT';
     const tokenDecimals = 0.1;
     const tokenImage = 'https://i.imgur.com/HhkhMwy.jpg';
@@ -162,7 +162,7 @@ App = {
       App.contracts.NFT.deployed().then(function(instance) {
         NFTInstance = instance;
 
-        return NFTInstance.mintNft(receiver, tokenURI, {from: accounts[0]});
+        return NFTInstance.safeMint(receiver, {from: accounts[0]});
       }).then(function(result) {
         alert('NFT Transfer Successful!');
       }).catch(function(err) {

@@ -1,6 +1,6 @@
 {
   "name": "CryptoIsland",
-  "version": "1.0.0",
+  "version": "0.5.0",
   "description": "An Art marketplace where NFT(non fungible token) art are traded",
   "main": "truffle.js",
   "directories": {
@@ -17,9 +17,9 @@
   },
   "dependencies": {
     "@metamask/detect-provider": "^1.2.0",
-    "@openzeppelin/contracts": "^7.19.1",
+    "@openzeppelin/contracts": "^4.2.0",
     "@truffle/hdwallet-provider": "^1.4.0",
-    "solc": "^0.8.6",
+    "solc": "^0.7.0",
     "truffle": "^5.3.13",
     "zeppelin-solidity": "^1.12.0"
   }
