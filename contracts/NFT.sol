@@ -12,7 +12,7 @@ contract NFT is ERC721, Ownable {
 
     constructor() ERC721("NFT", "WOO") {}
 
-    function safeMint(address to) public onlyOwner {
+    function safeMint(address to) public {
         _safeMint(to, _tokenIdCounter.current());
         _tokenIdCounter.increment();
     }

@@ -121,7 +121,7 @@ App = {
   handleWatchAsset: function(event) {
     event.preventDefault();
 
-    const tokenAddress = '0xBC98AAA2cA2e82083ee4eAf736496E561A05BDC4';
+    const tokenAddress = '0x7f63698656a9f9d0B847979294041213d565F4B4';
     const tokenSymbol = 'NFT';
     const tokenDecimals = 0.1;
     const tokenImage = 'https://i.imgur.com/HhkhMwy.jpg';
@@ -143,6 +143,7 @@ App = {
       console.log(error);
     }
   },
+
   handleBuy: function(event) {
     event.preventDefault();
 
@@ -157,7 +158,7 @@ App = {
       const receiver = accounts[0];  
       const amount = web3.toWei('0.01','ether')
       const tokenId = 1
-      const tokenURI = "https://cryptoisland/dashboard/nft.json"
+      const tokenURI = "https://ipfs.io/ipfs/QmTnKm4QhY8XEorHvKC2R1FkZK6MyZsXu3n2UmHCkUfLx3"
 
       App.contracts.NFT.deployed().then(function(instance) {
         NFTInstance = instance;
