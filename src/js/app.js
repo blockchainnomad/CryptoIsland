@@ -129,7 +129,7 @@ App = {
   handleWatchAsset: function(event) {
     event.preventDefault();
 
-    const tokenAddress = '0xee4a1BF6EcF2eA03bfc361d11Cc4431D8772cb16';
+    const tokenAddress = '0xb5b1be487d64be9aD7E1A38b6Da75Bbb6C970d03';
     const tokenSymbol = 'WOO';
     const tokenDecimals = 18;
     const tokenImage = 'https://i.imgur.com/HhkhMwy.jpg';
