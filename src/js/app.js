@@ -3,6 +3,14 @@ App = {
   contracts: {},
 
   init: async function() {
+    // $("#total").load("../balance.txt","document.querySelector('#last_last')", function(){
+    //   var totalBalance = $('#total');
+    // });
+
+    $("#total").load('../balance.txt');
+
+    
+
     // Load artworks.`'
     $.getJSON('../arts.json', function(data) {
       var artsRow = $('#artsRow');
@@ -99,13 +107,13 @@ App = {
       // return App.markPurchased();
     });
 
-    $.getJSON('NFT.json', function(data) {
+    $.getJSON('CryptoIslandToken.json', function(data) {
       // Get the necessary contract artifact file and instantiate it with truffle-contract.
       var NFTArtifact = data;
-      App.contracts.NFT = TruffleContract(NFTArtifact);
+      App.contracts.CryptoIslandToken = TruffleContract(NFTArtifact);
 
       // Set the provider for our contract.
-      App.contracts.NFT.setProvider(App.web3Provider);
+      App.contracts.CryptoIslandToken.setProvider(App.web3Provider);
 
     });
 
@@ -121,9 +129,9 @@ App = {
   handleWatchAsset: function(event) {
     event.preventDefault();
 
-    const tokenAddress = '0x7f63698656a9f9d0B847979294041213d565F4B4';
-    const tokenSymbol = 'NFT';
-    const tokenDecimals = 0.1;
+    const tokenAddress = '0xee4a1BF6EcF2eA03bfc361d11Cc4431D8772cb16';
+    const tokenSymbol = 'WOO';
+    const tokenDecimals = 18;
     const tokenImage = 'https://i.imgur.com/HhkhMwy.jpg';
     
     try {
@@ -156,14 +164,14 @@ App = {
       }
 
       const receiver = accounts[0];  
-      const amount = web3.toWei('0.01','ether')
+      const amount = web3.toWei('1','ether')
       const tokenId = 1
       const tokenURI = "https://ipfs.io/ipfs/QmTnKm4QhY8XEorHvKC2R1FkZK6MyZsXu3n2UmHCkUfLx3"
 
-      App.contracts.NFT.deployed().then(function(instance) {
+      App.contracts.CryptoIslandToken.deployed().then(function(instance) {
         NFTInstance = instance;
 
-        return NFTInstance.safeMint(receiver, {from: accounts[0]});
+        return NFTInstance.mint(receiver, amount, {from: accounts[0]});
       }).then(function(result) {
         alert('NFT Transfer Successful!');
       }).catch(function(err) {
@@ -178,3 +186,5 @@ $(function() {
     App.init();
   });
 });
+
+

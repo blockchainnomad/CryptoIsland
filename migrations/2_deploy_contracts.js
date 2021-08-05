@@ -1,5 +1,5 @@
-var NFT = artifacts.require("NFT");
+var CryptoIslandToken = artifacts.require("CryptoIslandToken");
 
 module.exports = function(deployer) {
-  deployer.deploy(NFT);
+  deployer.deploy(CryptoIslandToken);
 };
