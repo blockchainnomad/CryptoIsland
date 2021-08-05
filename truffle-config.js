@@ -1,5 +1,5 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const mnemonic = "your wallet mnemonic"
+const mnemonic = "walk tiger leopard beauty exclude tree write inhale nice just foster gown"
 module.exports = {
   compilers: {
     solc: {
@@ -14,7 +14,7 @@ module.exports = {
     },
     ropsten: {
       provider: function() {
-        return new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/your project id")
+        return new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/a269b3fad4fc4036a44bd481643c4092")
       },
       network_id: 3,
       gas: 6721975,
