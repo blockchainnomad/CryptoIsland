@@ -163,7 +163,7 @@ App = {
         console.log(error);
       }
 
-      const receiver = accounts[0];  
+      const receiver = accounts[0];
       const amount = web3.toWei('1','ether')
       const tokenId = 1
       const tokenURI = "https://ipfs.io/ipfs/QmTnKm4QhY8XEorHvKC2R1FkZK6MyZsXu3n2UmHCkUfLx3"
