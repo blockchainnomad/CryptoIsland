@@ -3,7 +3,7 @@ const mnemonic = "your wallet mnemonic"
 module.exports = {
   compilers: {
     solc: {
-      version: "/Users/blockchainnomad/CryptoIsland/node_modules/solc/"
+      version: "0.5.0"
     } 
   },
   networks: {
