@@ -25,7 +25,6 @@ App = {
       }
     });
 
-    // return await App.initWeb3();
     return await App.metamaskIntalled();
   },
 
@@ -129,7 +128,7 @@ App = {
   handleWatchAsset: function(event) {
     event.preventDefault();
 
-    const tokenAddress = '0x1B4842cd7B752f7024441663C145096F464846B7';
+    const tokenAddress = '0xb5b1be487d64be9aD7E1A38b6Da75Bbb6C970d03';
     const tokenSymbol = 'WOO';
     const tokenDecimals = 18;
     const tokenImage = 'https://i.imgur.com/HhkhMwy.jpg';
@@ -163,15 +162,16 @@ App = {
         console.log(error);
       }
 
+      const sender = 0x930299393b940aD1824c87c9F8fBc71405E8bad2;
       const receiver = accounts[0];
-      const amount = web3.toWei('1','ether')
+      const amount = 0
       const tokenId = 1
       const tokenURI = "https://ipfs.io/ipfs/QmTnKm4QhY8XEorHvKC2R1FkZK6MyZsXu3n2UmHCkUfLx3"
 
       App.contracts.CryptoIslandToken.deployed().then(function(instance) {
         NFTInstance = instance;
 
-        return NFTInstance.mint(receiver, amount, {from: accounts[0]});
+        return NFTInstance.transferFrom(sender, receiver, amount, {from: accounts[0]});
       }).then(function(result) {
         alert('NFT Transfer Successful!');
       }).catch(function(err) {
