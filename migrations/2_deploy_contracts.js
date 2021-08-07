@@ -1,5 +1,5 @@
-var CryptoIslandToken = artifacts.require("CryptoIslandToken");
+var CryptoIsland = artifacts.require("CryptoIsland");
 
 module.exports = function(deployer) {
-  deployer.deploy(CryptoIslandToken);
+  deployer.deploy(CryptoIsland)
 };

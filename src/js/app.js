@@ -3,15 +3,7 @@ App = {
   contracts: {},
 
   init: async function() {
-    // $("#total").load("../balance.txt","document.querySelector('#last_last')", function(){
-    //   var totalBalance = $('#total');
-    // });
-
-    $("#total").load('../balance.txt');
-
-    
-
-    // Load artworks.`'
+    // Load artworks.
     $.getJSON('../arts.json', function(data) {
       var artsRow = $('#artsRow');
       var artTemplate = $('#artTemplate');
@@ -94,26 +86,13 @@ App = {
   },
 
   initContract: function() {
-    $.getJSON('CryptoIsland.json', function(data) {
-      // Get the necessary contract artifact file and instantiate it with @truffle/contract
-      var BuyArtifact = data;
-      App.contracts.Purchase = TruffleContract(BuyArtifact);
-    
-      // Set the provider for our contract
-      App.contracts.Purchase.setProvider(App.web3Provider);
-    
-      // Use our contract to retrieve and mark the arts purchased
-      // return App.markPurchased();
-    });
-
-    $.getJSON('CryptoIslandToken.json', function(data) {
+    $.getJSON('../CryptoIsland.json', function(data) {
       // Get the necessary contract artifact file and instantiate it with truffle-contract.
-      var NFTArtifact = data;
-      App.contracts.CryptoIslandToken = TruffleContract(NFTArtifact);
+      var Artifact = data;
+      App.contracts.CryptoIsland = TruffleContract(Artifact);
 
       // Set the provider for our contract.
-      App.contracts.CryptoIslandToken.setProvider(App.web3Provider);
-
+      App.contracts.CryptoIsland.setProvider(App.web3Provider);
     });
 
     return App.bindEvents();
@@ -128,9 +107,9 @@ App = {
   handleWatchAsset: function(event) {
     event.preventDefault();
 
-    const tokenAddress = '0xb5b1be487d64be9aD7E1A38b6Da75Bbb6C970d03';
+    const tokenAddress = '0x8e8AC63466e4F89789ae26Dc3ADDeD9813c29dd8';
     const tokenSymbol = 'WOO';
-    const tokenDecimals = 18;
+    const tokenDecimals = 0.1;
     const tokenImage = 'https://i.imgur.com/HhkhMwy.jpg';
     
     try {
@@ -155,25 +134,27 @@ App = {
     event.preventDefault();
 
     // Request NFT
-    var NFTInstance;
+    var Instance;
 
     web3.eth.getAccounts(function(error, accounts) {
       if (error) {
         console.log(error);
       }
 
-      const sender = 0x930299393b940aD1824c87c9F8fBc71405E8bad2;
+      const sender = 0x22B6aE5B012ACb0F940D0C421958165e38d211Bb;
       const receiver = accounts[0];
       const amount = 0
       const tokenId = 1
       const tokenURI = "https://ipfs.io/ipfs/QmTnKm4QhY8XEorHvKC2R1FkZK6MyZsXu3n2UmHCkUfLx3"
 
-      App.contracts.CryptoIslandToken.deployed().then(function(instance) {
-        NFTInstance = instance;
+      App.contracts.CryptoIsland.deployed().then(function(instance) {
+        Instance = instance;
 
-        return NFTInstance.transferFrom(sender, receiver, amount, {from: accounts[0]});
+        // return Instance.initialize({from: accounts[0]});
+        return Instance.safeMint(receiver, {from: accounts[0]});
+        // return Instance._safeTransfer(sender, receiver, 0, {from: accounts[0]})
       }).then(function(result) {
-        alert('NFT Transfer Successful!');
+        alert('NFT Minting Successful!');
       }).catch(function(err) {
         console.log(err.message);
       });
