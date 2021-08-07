@@ -24,7 +24,7 @@ contract CryptoIsland is Initializable, ERC721Upgradeable, ERC721EnumerableUpgra
         __ERC721Burnable_init();
     }
 
-    function safeMint(address to) public onlyOwner {
+    function safeMint(address to) public payable {
         _safeMint(to, _tokenIdCounter.current());
         _tokenIdCounter.increment();
     }

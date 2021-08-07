@@ -107,7 +107,7 @@ App = {
   handleWatchAsset: function(event) {
     event.preventDefault();
 
-    const tokenAddress = '0x8e8AC63466e4F89789ae26Dc3ADDeD9813c29dd8';
+    const tokenAddress = '0x64E21810f0d5e8BB4796ADDC18097C70731e2AE2';
     const tokenSymbol = 'WOO';
     const tokenDecimals = 0.1;
     const tokenImage = 'https://i.imgur.com/HhkhMwy.jpg';
@@ -141,20 +141,16 @@ App = {
         console.log(error);
       }
 
-      const sender = 0x22B6aE5B012ACb0F940D0C421958165e38d211Bb;
       const receiver = accounts[0];
-      const amount = 0
-      const tokenId = 1
-      const tokenURI = "https://ipfs.io/ipfs/QmTnKm4QhY8XEorHvKC2R1FkZK6MyZsXu3n2UmHCkUfLx3"
 
       App.contracts.CryptoIsland.deployed().then(function(instance) {
         Instance = instance;
 
         // return Instance.initialize({from: accounts[0]});
         return Instance.safeMint(receiver, {from: accounts[0]});
-        // return Instance._safeTransfer(sender, receiver, 0, {from: accounts[0]})
       }).then(function(result) {
-        alert('NFT Minting Successful!');
+        // alert('NFT Minting Successful!');
+        alert('NFT Transfer Successful!');
       }).catch(function(err) {
         console.log(err.message);
       });
