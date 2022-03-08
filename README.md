@@ -8,6 +8,7 @@ An NFT(non-fungible-token) Art marketplace where you can try to trade NFT art
 
 It's being developed in Ethereum Ropsten testnet
 
-Website
+<!-- Website
 ----
 [cryptoisland.art](http://cryptoisland.art)
+ -->
