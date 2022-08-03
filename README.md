@@ -4,14 +4,9 @@
 
 ## Overiew
 
-=======
-Overiew
-
 ---
 
 NFT 아트 마켓플레이스 크립토 아일랜드에 온 것을 환영합니다.
-
-> > > > > > > b6dbe74797f094f8e825aa0e24c3822488329c08
 
 이더리움 rinkeby 테스트넷에서 동작합니다.
 
@@ -19,9 +14,6 @@ NFT 아트 마켓플레이스 크립토 아일랜드에 온 것을 환영합니�
 
 yarn install
 
-## <!-- Website
-
-=======
 yarn start
 
 ---
@@ -29,4 +21,3 @@ yarn start
 IPFS Gateway URL
 https://nftstorage.link/ipfs/bafybeifuw2j3zufdn46ofibdcwhwb2i6t2sjc2tjv6oz4qcnjxe4bzscc4
 
-## <!-- Website
