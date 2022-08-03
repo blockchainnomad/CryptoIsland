@@ -10,6 +10,7 @@ Overiew
 
 ----
 yarn install
+yarn dev
 
 ----
 IPFS Gateway URL
