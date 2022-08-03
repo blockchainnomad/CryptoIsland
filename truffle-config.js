@@ -1,22 +1,33 @@
+const fs = require("fs");
+const mnemonic = fs.readFileSync(".secret").toString().trim();
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const mnemonic = "your wallet mnemonic"
+const rpc = 'wss://ropsten.infura.io/ws/v3/9cdc847a5056409da81c08ffb4aff48e'
+
 module.exports = {
   compilers: {
     solc: {
-      version: "0.5.0"
-    } 
+      version: "0.8.2"
+    }
   },
   networks: {
     development: {
       host: "127.0.0.1",
-      port: 8545,
-      network_id: "*" // Match any network id
+      port: 9545,
+      network_id: "*"
     },
     ropsten: {
-      provider: function() {
-        return new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/your project id")
+      provider: function () {
+        return new HDWalletProvider(mnemonic, rpc)
       },
       network_id: 3,
+      gas: 6721975,
+      gasPrice: 20000000000
+    },
+    goerli: {
+      provider: function () {
+        return new HDWalletProvider(mnemonic, rpc)
+      },
+      network_id: 5,
       gas: 6721975,
       gasPrice: 20000000000
     },
@@ -25,5 +36,11 @@ module.exports = {
       port: 7545,
       network_id: "*",
     }
+  },
+  plugins: [
+    'truffle-plugin-verify'
+  ],
+  api_keys: {
+    etherscan: 'C459CS5NHGYIUGWDCS3TRPDBTXXQC81HTI'
   }
 };

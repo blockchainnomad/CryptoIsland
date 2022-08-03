@@ -10,12 +10,20 @@ import "./@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721Burn
 import "./@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "./@openzeppelin/contracts-upgradeable/utils/CountersUpgradeable.sol";
 
-contract CryptoIsland is Initializable, ERC721Upgradeable, ERC721EnumerableUpgradeable, ERC721URIStorageUpgradeable, PausableUpgradeable, OwnableUpgradeable, ERC721BurnableUpgradeable {
+contract CryptoIsland is
+    Initializable,
+    ERC721Upgradeable,
+    ERC721EnumerableUpgradeable,
+    ERC721URIStorageUpgradeable,
+    PausableUpgradeable,
+    OwnableUpgradeable,
+    ERC721BurnableUpgradeable
+{
     using CountersUpgradeable for CountersUpgradeable.Counter;
 
     CountersUpgradeable.Counter private _tokenIdCounter;
 
-    function initialize() initializer public {
+    function initialize() public initializer {
         __ERC721_init("CryptoIsland", "WOO");
         __ERC721Enumerable_init();
         __ERC721URIStorage_init();
@@ -38,13 +46,18 @@ contract CryptoIsland is Initializable, ERC721Upgradeable, ERC721EnumerableUpgra
     }
 
     function _baseURI() internal pure override returns (string memory) {
-        return "https://gateway.pinata.cloud/ipfs/QmXhmrBimofaNfBZFm3zeEdDjbkF9J8Cos94i5HMDB3MDc";
+        return
+            "https://gateway.pinata.cloud/ipfs/QmXhmrBimofaNfBZFm3zeEdDjbkF9J8Cos94i5HMDB3MDc";
     }
 
-    function _beforeTokenTransfer(address from, address to, uint256 tokenId)
+    function _beforeTokenTransfer(
+        address from,
+        address to,
+        uint256 tokenId
+    )
         internal
-        whenNotPaused
         override(ERC721Upgradeable, ERC721EnumerableUpgradeable)
+        whenNotPaused
     {
         super._beforeTokenTransfer(from, to, tokenId);
     }
