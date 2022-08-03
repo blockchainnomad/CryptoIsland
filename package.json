@@ -7,11 +7,12 @@
   "author": "blockchainnomad <40536266+blockchainnomad@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "lite-server",
+    "start": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "lite-server": "^2.6.1"
+    "lite-server": "^2.6.1",
+    "truffle-plugin-verify": "^0.5.26"
   },
   "dependencies": {
     "@metamask/detect-provider": "^1.2.0",

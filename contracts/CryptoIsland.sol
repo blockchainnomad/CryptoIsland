@@ -23,6 +23,8 @@ contract CryptoIsland is
 
     CountersUpgradeable.Counter private _tokenIdCounter;
 
+    string public baseTokenURI;
+
     function initialize() public initializer {
         __ERC721_init("CryptoIsland", "WOO");
         __ERC721Enumerable_init();
@@ -45,9 +47,8 @@ contract CryptoIsland is
         _unpause();
     }
 
-    function _baseURI() internal pure override returns (string memory) {
-        return
-            "https://gateway.pinata.cloud/ipfs/QmXhmrBimofaNfBZFm3zeEdDjbkF9J8Cos94i5HMDB3MDc";
+    function _baseURI() internal view virtual override returns (string memory) {
+        return baseTokenURI;
     }
 
     function _beforeTokenTransfer(
@@ -67,6 +68,10 @@ contract CryptoIsland is
         override(ERC721Upgradeable, ERC721URIStorageUpgradeable)
     {
         super._burn(tokenId);
+    }
+
+    function setBaseURI(string memory _baseTokenURI) public onlyOwner {
+        baseTokenURI = _baseTokenURI;
     }
 
     function tokenURI(uint256 tokenId)

@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add ganache
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add truffle-plugin-verify -D
 
 PATH: 
   C:\Python310\Scripts\;C:\Python310\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\PuTTY\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Bandizip\;C:\Program Files\MongoDB\Server\6.0\bin;C:\Users\medium\AppData\Local\Microsoft\WindowsApps;C:\Users\medium\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\medium\AppData\Roaming\npm;C:\Users\medium\AppData\Local\Yarn\bin;C:\Users\medium\AppData\Local\GitHubDesktop\bin
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\CryptoIsland\node_modules\bufferutil\prebuilds\win32-x64\node.napi.node'
+  Error: EPERM: operation not permitted, unlink 'C:\CryptoIsland\node_modules\ganache\node_modules\leveldown\prebuilds\win32-x64\node.napi.node'
 
 npm manifest: 
   {
@@ -41,6 +41,7 @@ npm manifest:
       "browser-sync": "^2.27.5",
       "chai": "^4.3.6",
       "chai-as-promised": "^7.1.1",
+      "ganache": "^7.4.0",
       "mocha": "^10.0.0",
       "react": "^17.0.2",
       "solc": "^0.5.0",
@@ -5139,7 +5140,7 @@ Lockfile:
       ethereumjs-wallet "0.6.5"
       web3 "1.2.11"
   
-  ganache@7.4.0:
+  ganache@7.4.0, ganache@^7.4.0:
     version "7.4.0"
     resolved "https://registry.yarnpkg.com/ganache/-/ganache-7.4.0.tgz#24c56a55c15f6031ffbbb8a634fbb52d752f155e"
     integrity sha512-e1x0ZJsJ5zUP+hWtpSNv+FaavRdcrQhQwe+QZ4kVon5mDm6RgFpe3PzNDJXg82AeqqslohJeK9UinZbZzjewjQ==
