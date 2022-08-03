@@ -4,9 +4,9 @@
 
 Overiew
 ----
-An NFT(non-fungible-token) Art marketplace where you can try to trade NFT art
+이 프로젝트는 미술품 NFT를 이더리움 블록체인 발행하기 위해 구현되었습니다.
 
-It's being developed in Ethereum Ropsten testnet
+이더리움 rinkeby 테스트넷에서 동작합니다.
 
 <!-- Website
 ----
