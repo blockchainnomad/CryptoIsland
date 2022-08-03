@@ -1,6 +1,7 @@
 # CryptoIsland
 ![cryptoisland_logo](https://user-images.githubusercontent.com/40536266/126930497-4f92d5f1-4d4e-44e0-97bd-3db3472da507.jpeg)
 
+![CryptoIsland](https://user-images.githubusercontent.com/40536266/182557213-4e9c8f74-788d-49d5-89f6-73ae563a03fc.gif)
 
 Overiew
 ----
