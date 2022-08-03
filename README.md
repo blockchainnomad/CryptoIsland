@@ -9,7 +9,7 @@ Overiew
 이더리움 rinkeby 테스트넷에서 동작합니다.
 
 ----
-
+yarn install
 
 <!-- Website
 ----
