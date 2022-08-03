@@ -11,6 +11,10 @@ Overiew
 ----
 yarn install
 
+----
+IPFS Gateway URL
+https://nftstorage.link/ipfs/bafybeifuw2j3zufdn46ofibdcwhwb2i6t2sjc2tjv6oz4qcnjxe4bzscc4
+
 <!-- Website
 ----
 [cryptoisland.art](http://cryptoisland.art)
