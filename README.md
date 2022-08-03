@@ -2,8 +2,6 @@
 
 ![cryptoisland_logo](https://user-images.githubusercontent.com/40536266/126930497-4f92d5f1-4d4e-44e0-97bd-3db3472da507.jpeg)
 
-## Overiew
-
 ---
 
 NFT 아트 마켓플레이스 크립토 아일랜드에 온 것을 환영합니다.
