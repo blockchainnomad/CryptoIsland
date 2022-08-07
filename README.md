@@ -11,8 +11,13 @@ NFT 민팅 튜토리얼 사이트 크립토 아일랜드에 온 것을 환영합
 현재 NFT 민팅 및 거래를 할 수 있는 크립토 아일랜드 2.0 개발중입니다.
 
 ---
+CryptoIsland 디렉토리에서
 
-yarn install
+1. yarn install로 node_modules 패키지 설치하기
 
-yarn start
+2. .secret 파일 생성 후 mnemonic 입력하기
+
+3. truffle-confing.js에서 rpc 수정하기
+
+4. yarn start로 로컬 서버 시작하기
 
