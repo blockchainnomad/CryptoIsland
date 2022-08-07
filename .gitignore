@@ -1,4 +1,7 @@
 node_modules
 truffle-config.js
 package-lock.json
+yarn.lock
 .secret
+.env
+.DS_Store

@@ -1,7 +1,7 @@
 const fs = require("fs");
 const mnemonic = fs.readFileSync(".secret").toString().trim();
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const rpc = 'wss://ropsten.infura.io/ws/v3/9cdc847a5056409da81c08ffb4aff48e'
+const rpc = 'your rpc address'
 
 module.exports = {
   compilers: {
