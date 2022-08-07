@@ -15,6 +15,7 @@ NFT 민팅 튜토리얼 사이트 크립토 아일랜드에 온 것을 환영합
 https://www.mmoonme.com/
 
 ---
+@dev
 CryptoIsland 디렉토리에서
 
 1. yarn install로 node_modules 패키지 설치하기
