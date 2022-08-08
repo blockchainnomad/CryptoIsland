@@ -86,7 +86,7 @@ App = {
   },
 
   initContract: function () {
-    $.getJSON('../CryptoIsland.json', function (data) {
+    $.getJSON('CryptoIsland.json', function (data) {
       // Get the necessary contract artifact file and instantiate it with truffle-contract.
       var Artifact = data;
       App.contracts.CryptoIsland = TruffleContract(Artifact);
@@ -101,7 +101,7 @@ App = {
 
   bindEvents: function () {
     $(document).on('click', '#btn-buy', App.handleWatchAsset);
-    $(document).on('click', '#btn-buy', App.handleBuy);
+    $(document).on('click', '#btn-buy', App.handleMint);
   },
 
   handleWatchAsset: function (event) {
@@ -130,7 +130,7 @@ App = {
     }
   },
 
-  handleBuy: function (event) {
+  handleMint: function (event) {
     event.preventDefault();
 
     // Request NFT
