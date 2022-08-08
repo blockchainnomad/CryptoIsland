@@ -142,15 +142,13 @@ App = {
         console.log(error);
       }
 
-      const receiver = accounts[0];
-
       App.contracts.CryptoIsland.deployed().then(function (instance) {
         Instance = instance;
 
         // return Instance.initialize({from: accounts[0]});
-        return Instance.safeMint(receiver, { from: accounts[0] });
+        // 10000000000000000 wei = 0.01 eth
+        return Instance.mintNFTs(1, { from: accounts[0], value: "10000000000000000" });
       }).then(function (result) {
-        // alert('NFT Minting Successful!');
         alert('NFT Minting Successful!');
       }).catch(function (err) {
         console.log(err.message);

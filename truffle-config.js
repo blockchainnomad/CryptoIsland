@@ -1,7 +1,6 @@
-const fs = require("fs");
-const mnemonic = fs.readFileSync(".secret").toString().trim();
+require("dotenv").config();
+const { mnemonic, etherscanApiKey, rpc } = process.env
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const rpc = 'https://rinkeby.infura.io/v3/your api key'
 
 module.exports = {
   compilers: {
@@ -41,6 +40,6 @@ module.exports = {
     'truffle-plugin-verify'
   ],
   api_keys: {
-    etherscan: 'your api key'
+    etherscan: etherscanApiKey
   }
 };
