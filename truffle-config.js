@@ -1,7 +1,7 @@
 const fs = require("fs");
 const mnemonic = fs.readFileSync(".secret").toString().trim();
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const rpc = 'https://rinkeby.infura.io/v3/9cdc847a5056409da81c08ffb4aff48e'
+const rpc = 'https://rinkeby.infura.io/v3/your api key'
 
 module.exports = {
   compilers: {
@@ -41,6 +41,6 @@ module.exports = {
     'truffle-plugin-verify'
   ],
   api_keys: {
-    etherscan: 'C459CS5NHGYIUGWDCS3TRPDBTXXQC81HTI'
+    etherscan: 'your api key'
   }
 };

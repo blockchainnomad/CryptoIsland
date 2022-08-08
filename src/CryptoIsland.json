@@ -156,7 +156,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -169,7 +170,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -201,7 +203,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -225,7 +228,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -238,7 +242,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -251,7 +256,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -270,7 +276,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -283,7 +290,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -372,7 +380,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -391,7 +400,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -415,7 +425,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -428,7 +439,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -484,7 +496,8 @@
       "name": "safeMint",
       "outputs": [],
       "stateMutability": "payable",
-      "type": "function"
+      "type": "function",
+      "payable": true
     },
     {
       "inputs": [],
@@ -530,7 +543,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -549,7 +563,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.2+commit.661d1103\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"approved\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Paused\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"Unpaused\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"baseTokenURI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"burn\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"getApproved\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"isApprovedForAll\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"ownerOf\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"}],\"name\":\"safeMint\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"}],\"name\":\"safeTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_baseTokenURI\",\"type\":\"string\"}],\"name\":\"setBaseURI\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"tokenByIndex\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"tokenOfOwnerByIndex\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"tokenURI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"unpause\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"approve(address,uint256)\":{\"details\":\"See {IERC721-approve}.\"},\"balanceOf(address)\":{\"details\":\"See {IERC721-balanceOf}.\"},\"burn(uint256)\":{\"details\":\"Burns `tokenId`. See {ERC721-_burn}. Requirements: - The caller must own `tokenId` or be an approved operator.\"},\"getApproved(uint256)\":{\"details\":\"See {IERC721-getApproved}.\"},\"isApprovedForAll(address,address)\":{\"details\":\"See {IERC721-isApprovedForAll}.\"},\"name()\":{\"details\":\"See {IERC721Metadata-name}.\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"ownerOf(uint256)\":{\"details\":\"See {IERC721-ownerOf}.\"},\"paused()\":{\"details\":\"Returns true if the contract is paused, and false otherwise.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"safeTransferFrom(address,address,uint256)\":{\"details\":\"See {IERC721-safeTransferFrom}.\"},\"safeTransferFrom(address,address,uint256,bytes)\":{\"details\":\"See {IERC721-safeTransferFrom}.\"},\"setApprovalForAll(address,bool)\":{\"details\":\"See {IERC721-setApprovalForAll}.\"},\"symbol()\":{\"details\":\"See {IERC721Metadata-symbol}.\"},\"tokenByIndex(uint256)\":{\"details\":\"See {IERC721Enumerable-tokenByIndex}.\"},\"tokenOfOwnerByIndex(address,uint256)\":{\"details\":\"See {IERC721Enumerable-tokenOfOwnerByIndex}.\"},\"totalSupply()\":{\"details\":\"See {IERC721Enumerable-totalSupply}.\"},\"transferFrom(address,address,uint256)\":{\"details\":\"See {IERC721-transferFrom}.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/CryptoIsland.sol\":\"CryptoIsland\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol\":{\"keccak256\":\"0x5f80565dbc726017487a968d5ebcf2a5d3f786879b4a816d42502ad3ddaa5a67\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4f29826e44dcc1e145d2cd48a64187f290521a37a337b7d87e456d796ff55af2\",\"dweb:/ipfs/QmaHjeDi7RcKtjXnz43EPHLZkcYi7EaP4nmevMb52ph3jd\"]},\"project:/contracts/@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol\":{\"keccak256\":\"0xf2788e700c57c7bcb7979a1d3466fc1f38f4d0778a772b3dafcf56db7c5cd9d3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://538c0d9285872b7849b2c721800d6c9ba20ea3fce2d5de6a89402c6289233580\",\"dweb:/ipfs/QmPMJSvz1XwaPEAYtzxPBPDbFuqk3Wyo8N2RRzQcTubJko\"]},\"project:/contracts/@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol\":{\"keccak256\":\"0x3e0a7172dec2b5cdfb8e33f9f421ee485d109d1ce94dff6186ba4d9f3b6d3e06\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://14c9d50e1cf26d739062b11622a0119fa8e62334244b1f1ae349f4ddd4d39236\",\"dweb:/ipfs/QmdTon8b8TW6XjRetwz19ZJ4AHG1zeHoWnqy2bvvb3MD8g\"]},\"project:/contracts/@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol\":{\"keccak256\":\"0x7ca879b2c9bdf4baa06a783720447094e5ce733d4916e3d9ac3444186a94db0a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a5d39d5b21a21c7811ca8ff9689b0543a907244d48dda0334a2619b2f6ab0a69\",\"dweb:/ipfs/QmTqtujhZGKgTbrDXY42A3LxQHdaXpnYVUDQ7mF9MYW7UX\"]},\"project:/contracts/@openzeppelin/contracts-upgradeable/token/ERC721/IERC721ReceiverUpgradeable.sol\":{\"keccak256\":\"0xedc3604c39ed8d2c0280235908e987d4fca420bc9f2c8a482d8764b1ac0f15f5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cd26a2cbaf7fe360f9d7219b142cd1f80c356c4e429bd3f60c0bb0dbfba4fae7\",\"dweb:/ipfs/QmT5yyGVC7EKf8pD2NtUzSof4ZbPRdd4GaHNaNUZyo69d7\"]},\"project:/contracts/@openzeppelin/contracts-upgradeable/token/ERC721/IERC721Upgradeable.sol\":{\"keccak256\":\"0xbf7c89761c4da8ab6380e8074d6ecd39666a68844adbe74288253a213ddad416\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0c60a62b7e480609b46dfb2a8b2b39c1f78a3c2a89a14f4693a6fc211ded494c\",\"dweb:/ipfs/QmT9xb9uuoBoLSte87XCGA3jfFnkZWuETRhWjqheBWttnS\"]},\"project:/contracts/@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721BurnableUpgradeable.sol\":{\"keccak256\":\"0x6cb168f932ac9087f536217a017ba83a8ae61c1bc303bc6cc5daa99e5e6112f3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c0c45ca62d5ccb5a1493b1d5a1877a895a6834df3b32839334e11c3d15c44fbf\",\"dweb:/ipfs/QmXcy2HZaY3dGayLH9MVRVzzmwo6k2mdmpbgdfh5DhY1Wg\"]},\"project:/contracts/@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol\":{\"keccak256\":\"0xd640055c3d5ed3cf13f92df64d97bf09078b954be80063a26ac46c580a90ec0b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8982a3c10809c3e4571aea4a3120eec33d5043523de70c03d8a1aa4bc882c602\",\"dweb:/ipfs/QmWB7diSoC9BB9tJZxaoJA8LkJtL2arNV4ZH8vEmRHMDAa\"]},\"project:/contracts/@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721URIStorageUpgradeable.sol\":{\"keccak256\":\"0xc8d04326d73976bd8647614e177a5ef65e7d2ae5d17961caa26a969c795a2fe6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f30c9b2231baab641001da326bc9083ed3de2ada73608f718c391ba40bbb4b7a\",\"dweb:/ipfs/QmYpU2TBRawDKNc262wPfVuKsC6WiU7jTqhHTRLEdq4wDw\"]},\"project:/contracts/@openzeppelin/contracts-upgradeable/token/ERC721/extensions/IERC721EnumerableUpgradeable.sol\":{\"keccak256\":\"0xba9cfeffaf06133e770a2c8f051b08bcf78b6fd6f72316d3e2da9eed6c0bac4d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9d34bad871f9923915ffc1a8ff70ec99037868ec4b71bd8254b7c67aa28e581f\",\"dweb:/ipfs/QmfYmh72B4hFMRuAxRpgTMGqrscvT25goMYxddp5CmBwhV\"]},\"project:/contracts/@openzeppelin/contracts-upgradeable/token/ERC721/extensions/IERC721MetadataUpgradeable.sol\":{\"keccak256\":\"0x239ebf81c7d6056b240256d5dfb9fec08fb6a8e0b88eb6535ea9cdae3d6c2e2c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://79b651d49521b7be444dc6305ac75369e0b4b90bbb0a06ab56217b7ac227c264\",\"dweb:/ipfs/QmW5BRxGL7SsoKyRrTh5dtmRMwzZeKMpATAv55HqCbcopL\"]},\"project:/contracts/@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol\":{\"keccak256\":\"0x506650338aedd65d41f06a5108f339f7a2c20b8a29b8d3b2033d3230ac89c7b6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://46248321372be9171f0582aac342be1162c14d6eea12ceedccef3f1ed01c003c\",\"dweb:/ipfs/QmYWmw9Vo3jsqPkpbvKwTnSvMBGQBWfDHJy8bk5Uzjqs41\"]},\"project:/contracts/@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol\":{\"keccak256\":\"0x63be944a6eff1cba15706c4d22c52240b5ce48f4ed99a6221c3c70996ac6855d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e1eea4a2eeea054b5c8c434cd05d561076bcc1b1f865249b22f9d7b4362f42cc\",\"dweb:/ipfs/QmdwTbqQN5EQ59NjsssNqHjnqDAXtu6KET7TZyL9T3hw3T\"]},\"project:/contracts/@openzeppelin/contracts-upgradeable/utils/CountersUpgradeable.sol\":{\"keccak256\":\"0x00d3c77a9f379e2cd4b55da9f57472bddde30cc015b68fab71879d048d556075\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://751cea6090540fcd511f505864301d9529f728f101f991809bab2bbce294825a\",\"dweb:/ipfs/QmNUzKLidBX7pRwsgiurxMtFou5rKEdAkDPJtwJCvkHNgG\"]},\"project:/contracts/@openzeppelin/contracts-upgradeable/utils/StringsUpgradeable.sol\":{\"keccak256\":\"0x6455675512eecf3988986d1bb976f098fad2baecf26454495946128610461992\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea4c9c48865fe3baecad76ebbd8ef23889e291acdfc66f05e598704f52d7a08\",\"dweb:/ipfs/QmaZZAwn9rpPbVKNT7k28nYv7CT8sKH98iGEoarfrpHPyi\"]},\"project:/contracts/@openzeppelin/contracts-upgradeable/utils/introspection/ERC165Upgradeable.sol\":{\"keccak256\":\"0x9c08e9acd9230f3992a4990e06d2fea54f6ada24405113580d3a8762a98dc2b5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://984dee4bf32e571d8ba2fb5526e2fd86d57e28219a73736dd1f4164f4fb4ef28\",\"dweb:/ipfs/QmZHXDT72VwogeEyCB6UuCcqyGuSLLoD7rJizA8dA33NCh\"]},\"project:/contracts/@openzeppelin/contracts-upgradeable/utils/introspection/IERC165Upgradeable.sol\":{\"keccak256\":\"0x1df424d47ee189ade865159e8c4630f06dcd67d2115ce6ab1a06b2de942004e5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f4d15d509483d66860b07c5e41648846d707e3e683ccd637dc1aba8213ed5561\",\"dweb:/ipfs/QmUwGPD1Qx7AGLBcNFPZgSN21NGtsyzSuiBCHJCuwXvgx1\"]},\"project:/contracts/CryptoIsland.sol\":{\"keccak256\":\"0x07f81200d0fc134cbaf2a8c2638272fc1edde84ef381dfe7b113f17c043465f1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://05102961363999ea70de83acd53be8167bca267ca694ba2fe0333dc9ef16904d\",\"dweb:/ipfs/QmPKJ3TNnwtwj17xED4uJV4wCmN2Acd57v6h7gFsJDmp2C\"]}},\"version\":1}",
@@ -17890,60 +17905,24 @@
   "ast": {
     "absolutePath": "project:/contracts/CryptoIsland.sol",
     "exportedSymbols": {
-      "AddressUpgradeable": [
-        2147
-      ],
-      "ContextUpgradeable": [
-        2190
-      ],
-      "CountersUpgradeable": [
-        2264
-      ],
-      "CryptoIsland": [
-        2712
-      ],
-      "ERC165Upgradeable": [
-        2513
-      ],
-      "ERC721BurnableUpgradeable": [
-        1323
-      ],
-      "ERC721EnumerableUpgradeable": [
-        1689
-      ],
-      "ERC721URIStorageUpgradeable": [
-        1845
-      ],
-      "ERC721Upgradeable": [
-        1131
-      ],
-      "IERC165Upgradeable": [
-        2525
-      ],
-      "IERC721EnumerableUpgradeable": [
-        1876
-      ],
-      "IERC721MetadataUpgradeable": [
-        1903
-      ],
-      "IERC721ReceiverUpgradeable": [
-        1149
-      ],
-      "IERC721Upgradeable": [
-        1265
-      ],
-      "Initializable": [
-        170
-      ],
-      "OwnableUpgradeable": [
-        124
-      ],
-      "PausableUpgradeable": [
-        283
-      ],
-      "StringsUpgradeable": [
-        2467
-      ]
+      "AddressUpgradeable": [2147],
+      "ContextUpgradeable": [2190],
+      "CountersUpgradeable": [2264],
+      "CryptoIsland": [2712],
+      "ERC165Upgradeable": [2513],
+      "ERC721BurnableUpgradeable": [1323],
+      "ERC721EnumerableUpgradeable": [1689],
+      "ERC721URIStorageUpgradeable": [1845],
+      "ERC721Upgradeable": [1131],
+      "IERC165Upgradeable": [2525],
+      "IERC721EnumerableUpgradeable": [1876],
+      "IERC721MetadataUpgradeable": [1903],
+      "IERC721ReceiverUpgradeable": [1149],
+      "IERC721Upgradeable": [1265],
+      "Initializable": [170],
+      "OwnableUpgradeable": [124],
+      "PausableUpgradeable": [283],
+      "StringsUpgradeable": [2467]
     },
     "id": 2713,
     "license": "MIT",
@@ -17951,12 +17930,7 @@
     "nodes": [
       {
         "id": 2527,
-        "literals": [
-          "solidity",
-          "^",
-          "0.8",
-          ".2"
-        ],
+        "literals": ["solidity", "^", "0.8", ".2"],
         "nodeType": "PragmaDirective",
         "src": "33:23:17"
       },
@@ -18145,38 +18119,15 @@
           }
         ],
         "contractDependencies": [
-          124,
-          170,
-          283,
-          1131,
-          1265,
-          1323,
-          1689,
-          1845,
-          1876,
-          1903,
-          2190,
-          2513,
+          124, 170, 283, 1131, 1265, 1323, 1689, 1845, 1876, 1903, 2190, 2513,
           2525
         ],
         "contractKind": "contract",
         "fullyImplemented": true,
         "id": 2712,
         "linearizedBaseContracts": [
-          2712,
-          1323,
-          124,
-          283,
-          1845,
-          1689,
-          1876,
-          1131,
-          1903,
-          1265,
-          2513,
-          2525,
-          2190,
-          170
+          2712, 1323, 124, 283, 1845, 1689, 1876, 1131, 1903, 1265, 2513, 2525,
+          2190, 170
         ],
         "name": "CryptoIsland",
         "nameLocation": "787:12:17",
@@ -18653,10 +18604,7 @@
                       "id": 2589,
                       "name": "_safeMint",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        821,
-                        850
-                      ],
+                      "overloadedDeclarations": [821, 850],
                       "referencedDeclaration": 821,
                       "src": "1487:9:17",
                       "typeDescriptions": {
@@ -18955,9 +18903,7 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              526
-            ],
+            "baseFunctions": [526],
             "body": {
               "id": 2628,
               "nodeType": "Block",
@@ -19043,10 +18989,7 @@
             "visibility": "internal"
           },
           {
-            "baseFunctions": [
-              1126,
-              1523
-            ],
+            "baseFunctions": [1126, 1523],
             "body": {
               "id": 2651,
               "nodeType": "Block",
@@ -19298,10 +19241,7 @@
             "visibility": "internal"
           },
           {
-            "baseFunctions": [
-              958,
-              1840
-            ],
+            "baseFunctions": [958, 1840],
             "body": {
               "id": 2666,
               "nodeType": "Block",
@@ -19570,10 +19510,7 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              517,
-              1788
-            ],
+            "baseFunctions": [517, 1788],
             "body": {
               "id": 2694,
               "nodeType": "Block",
@@ -19754,10 +19691,7 @@
             "visibility": "public"
           },
           {
-            "baseFunctions": [
-              403,
-              1397
-            ],
+            "baseFunctions": [403, 1397],
             "body": {
               "id": 2710,
               "nodeType": "Block",
@@ -19948,9 +19882,17 @@
     "name": "solc",
     "version": "0.8.2+commit.661d1103.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "4": {
+      "events": {},
+      "links": {},
+      "address": "0x44E4f0478fAe61579ef11e80A4d9BbdD3Eaf3835",
+      "transactionHash": "0x0bce6b329fe3676f315604d6cac593d132cc88c3c3c3cb1933484afad7dcdf51"
+    }
+  },
   "schemaVersion": "3.4.8",
-  "updatedAt": "2022-08-08T05:12:03.599Z",
+  "updatedAt": "2022-08-08T05:52:17.400Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {

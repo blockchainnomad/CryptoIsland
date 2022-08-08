@@ -100,35 +100,35 @@ App = {
 
 
   bindEvents: function () {
-    $(document).on('click', '#btn-buy', App.handleWatchAsset);
+    // $(document).on('click', '#btn-buy', App.handleWatchAsset);
     $(document).on('click', '#btn-buy', App.handleMint);
   },
 
-  handleWatchAsset: function (event) {
-    event.preventDefault();
+  // handleWatchAsset: function (event) {
+  //   event.preventDefault();
 
-    const tokenAddress = '0x3cF0A97972Ae4aF6f1bB33b3EbB4504f3A237947';
-    const tokenSymbol = 'WOO';
-    const tokenDecimals = 0.1;
-    const tokenImage = 'https://i.imgur.com/HhkhMwy.jpg';
+  //   const tokenAddress = '0x44E4f0478fAe61579ef11e80A4d9BbdD3Eaf3835';
+  //   const tokenSymbol = 'WOO';
+  //   const tokenDecimals = 0.1;
+  //   const tokenImage = 'https://i.imgur.com/HhkhMwy.jpg';
 
-    try {
-      const AddNFT = ethereum.request({
-        method: 'wallet_watchAsset',
-        params: {
-          type: 'ERC20',
-          options: {
-            address: tokenAddress,
-            symbol: tokenSymbol,
-            decimals: tokenDecimals,
-            image: tokenImage
-          },
-        },
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  },
+  //   try {
+  //     const AddNFT = ethereum.request({
+  //       method: 'wallet_watchAsset',
+  //       params: {
+  //         type: 'ERC20',
+  //         options: {
+  //           address: tokenAddress,
+  //           symbol: tokenSymbol,
+  //           decimals: tokenDecimals,
+  //           image: tokenImage
+  //         },
+  //       },
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // },
 
   handleMint: function (event) {
     event.preventDefault();
