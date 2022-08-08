@@ -1,7 +1,7 @@
 const fs = require("fs");
 const mnemonic = fs.readFileSync(".secret").toString().trim();
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const rpc = 'your rpc address'
+const rpc = 'https://rinkeby.infura.io/v3/your api key'
 
 module.exports = {
   compilers: {
@@ -23,11 +23,11 @@ module.exports = {
       gas: 6721975,
       gasPrice: 20000000000
     },
-    goerli: {
+    rinkeby: {
       provider: function () {
         return new HDWalletProvider(mnemonic, rpc)
       },
-      network_id: 5,
+      network_id: 4,
       gas: 6721975,
       gasPrice: 20000000000
     },
@@ -41,6 +41,6 @@ module.exports = {
     'truffle-plugin-verify'
   ],
   api_keys: {
-    etherscan: 'C459CS5NHGYIUGWDCS3TRPDBTXXQC81HTI'
+    etherscan: 'your api key'
   }
 };
