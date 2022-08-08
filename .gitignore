@@ -1,5 +1,4 @@
 node_modules
-truffle-config.js
 package-lock.json
 yarn.lock
 .secret

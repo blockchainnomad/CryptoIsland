@@ -68,19 +68,19 @@ App = {
   },
 
   SwitchChain: async function () {
-    // Switch to Ropsten
+    // Switch to Rinkeby
     try {
-      const params = [{ chainId: '0x3' }]
+      const params = [{ chainId: '0x4' }]
       await window.ethereum.request({
         method: 'wallet_switchEthereumChain',
         params: params
       })
-      console.log('Network is Ropsten')
+      console.log('Network is Rinkeby')
     } catch (error) {
       console.log(error)
     }
     window.ethereum.on('chainChanged', (chainId) => {
-      console.log(chainId) // 0x3 if it's Ropsten
+      console.log(chainId) // 0x4 if it's Rinkeby
     })
     return await App.initContract();
   },
@@ -104,31 +104,31 @@ App = {
     $(document).on('click', '#btn-buy', App.handleBuy);
   },
 
-  // handleWatchAsset: function (event) {
-  //   event.preventDefault();
+  handleWatchAsset: function (event) {
+    event.preventDefault();
 
-  //   const tokenAddress = '0xcE1961318a71695825C8cDe625CdB3986a1F49A2';
-  //   const tokenSymbol = 'WOO';
-  //   const tokenDecimals = 0.1;
-  //   const tokenImage = 'https://i.imgur.com/HhkhMwy.jpg';
+    const tokenAddress = '0x3cF0A97972Ae4aF6f1bB33b3EbB4504f3A237947';
+    const tokenSymbol = 'WOO';
+    const tokenDecimals = 0.1;
+    const tokenImage = 'https://i.imgur.com/HhkhMwy.jpg';
 
-  //   try {
-  //     const AddNFT = ethereum.request({
-  //       method: 'wallet_watchAsset',
-  //       params: {
-  //         type: 'ERC20',
-  //         options: {
-  //           address: tokenAddress,
-  //           symbol: tokenSymbol,
-  //           decimals: tokenDecimals,
-  //           image: tokenImage
-  //         },
-  //       },
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // },
+    try {
+      const AddNFT = ethereum.request({
+        method: 'wallet_watchAsset',
+        params: {
+          type: 'ERC20',
+          options: {
+            address: tokenAddress,
+            symbol: tokenSymbol,
+            decimals: tokenDecimals,
+            image: tokenImage
+          },
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  },
 
   handleBuy: function (event) {
     event.preventDefault();
