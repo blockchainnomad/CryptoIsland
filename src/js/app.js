@@ -21,31 +21,6 @@ App = {
     // return await App.metamaskIntalled();
   },
 
-  // metamaskIntalled: function () {
-  //   if (window.ethereum) {
-  //     handleEthereum();
-  //   } else {
-  //     window.addEventListener('ethereum#initialized', handleEthereum, {
-  //       once: true,
-  //     });
-
-  //     // If the event is not dispatched by the end of the timeout,
-  //     // the user probably doesn't have MetaMask installed.
-  //     setTimeout(handleEthereum, 3000); // 3 seconds
-  //   }
-
-  //   function handleEthereum() {
-  //     const { ethereum } = window;
-  //     if (ethereum && ethereum.isMetaMask) {
-  //       console.log('Ethereum successfully detected!');
-  //       // Access the decentralized web!
-  //     } else {
-  //       console.log('Please install MetaMask!');
-  //       window.open().location.replace("https://metamask.io");
-  //     }
-  //     return App.initWeb3();
-  //   }
-  // },
 
   initWeb3: async function () {
     // Modern dapp browsers...
@@ -104,32 +79,6 @@ App = {
     // $(document).on('click', '#btn-buy', App.handleWatchAsset);
     $(document).on('click', '#btn-buy', App.handleMint);
   },
-
-  // handleWatchAsset: function (event) {
-  //   event.preventDefault();
-
-  //   const tokenAddress = '0x44E4f0478fAe61579ef11e80A4d9BbdD3Eaf3835';
-  //   const tokenSymbol = 'WOO';
-  //   const tokenDecimals = 0.1;
-  //   const tokenImage = 'https://i.imgur.com/HhkhMwy.jpg';
-
-  //   try {
-  //     const AddNFT = ethereum.request({
-  //       method: 'wallet_watchAsset',
-  //       params: {
-  //         type: 'ERC20',
-  //         options: {
-  //           address: tokenAddress,
-  //           symbol: tokenSymbol,
-  //           decimals: tokenDecimals,
-  //           image: tokenImage
-  //         },
-  //       },
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // },
 
   handleMint: function (event) {
     event.preventDefault();
