@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { mnemonic, etherscanApiKey, rpc } = process.env
+const { mnemonic, etherscan, rpc } = process.env
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 
 module.exports = {
@@ -14,19 +14,11 @@ module.exports = {
       port: 9545,
       network_id: "*"
     },
-    ropsten: {
+    goerli: {
       provider: function () {
         return new HDWalletProvider(mnemonic, rpc)
       },
-      network_id: 3,
-      gas: 6721975,
-      gasPrice: 20000000000
-    },
-    rinkeby: {
-      provider: function () {
-        return new HDWalletProvider(mnemonic, rpc)
-      },
-      network_id: 4,
+      network_id: 5,
       gas: 6721975,
       gasPrice: 20000000000
     },
@@ -40,6 +32,6 @@ module.exports = {
     'truffle-plugin-verify'
   ],
   api_keys: {
-    etherscan: etherscanApiKey
+    etherscan: etherscan
   }
 };

@@ -3,7 +3,7 @@ App = {
   contracts: {},
 
   init: async function () {
-    // Load artworks.
+    // arts.json으로부터 작품 불러오기
     $.getJSON('../arts.json', function (data) {
       var artsRow = $('#artsRow');
       var artTemplate = $('#artTemplate');
@@ -11,14 +11,13 @@ App = {
       for (i = 0; i < data.length; i++) {
         artTemplate.find('.panel-title').text(data[i].name);
         artTemplate.find('img').attr('src', data[i].picture);
-        artTemplate.find('.btn-buy').attr('data-id', data[i].id);
+        artTemplate.find('.btn-mint').attr('data-id', data[i].id);
 
         artsRow.append(artTemplate.html());
       }
     });
 
     return await App.initWeb3();
-    // return await App.metamaskIntalled();
   },
 
 
@@ -44,67 +43,82 @@ App = {
   },
 
   SwitchChain: async function () {
-    // Switch to Rinkeby
+    // Switch to Goerli
     try {
-      const params = [{ chainId: '0x4' }]
+      const params = [{ chainId: '0x5' }]
       await window.ethereum.request({
         method: 'wallet_switchEthereumChain',
         params: params
       })
-      console.log('Network is Rinkeby')
+      console.log('Network is Goerli')
     } catch (error) {
       console.log(error)
     }
     window.ethereum.on('chainChanged', (chainId) => {
-      console.log(chainId) // 0x4 if it's Rinkeby
+      console.log(chainId) // 0x5 if it's Goerli
     })
     return await App.initContract();
   },
 
   initContract: function () {
     $.getJSON('CryptoIsland.json', function (data) {
-      // Get the necessary contract artifact file and instantiate it with truffle-contract.
+      // 컨트랙트 json 파일을 가져온 후 TruffleContract의 인자로 넣어준다.
       var Artifact = data;
       App.contracts.CryptoIsland = TruffleContract(Artifact);
 
-      // Set the provider for our contract.
+      // web3 프로바이더를 설정한다
       App.contracts.CryptoIsland.setProvider(App.web3Provider);
     });
 
     return App.bindEvents();
   },
 
-
   bindEvents: function () {
-    // $(document).on('click', '#btn-buy', App.handleWatchAsset);
-    $(document).on('click', '#btn-buy', App.handleMint);
+    $(document).on('click', '.btn-mint', App.handleMint);
   },
 
+  
   handleMint: function (event) {
     event.preventDefault();
+    
+    // 버튼을 클릭하면 id를 가져와서 artId 변수에 저장한다.
+    const artId = parseInt($(event.target).data('id'));
+    
+    // NFT를 요청한다.
+    let Instance;
 
-    // Request NFT
-    var Instance;
-
+    // web3 프로바이더로부터 계정 정보를 요청한다.
     web3.eth.getAccounts(function (error, accounts) {
       if (error) {
         console.log(error);
       }
-
-      App.contracts.CryptoIsland.deployed().then(function (instance) {
+      
+      let account = accounts[0];
+      
+      App.contracts.CryptoIsland.deployed().then(async function (instance) {
         Instance = instance;
-
-        // return Instance.initialize({from: accounts[0]});
+        
         // 10000000000000000 wei = 0.01 eth
-        return Instance.mintNFTs(1, { from: accounts[0], value: "10000000000000000" });
-      }).then(function (result) {
-        alert('NFT Minting Successful!');
+        let nftTx = await Instance.mintNFTs(1, { from: account, value: "10000000000000000" });
+        
+        return nftTx; 
+        
+      }).then(function (nftTx) {
+        console.log('artId', artId)
+
+        // // 민팅된 작품의 버튼은 Minted 표시로 바꾼다. 버튼 순서는 artId에 따른다.
+        $('.panel-body').eq(artId).find('button').text('Minted').attr('disabled', true);
+        
+        console.log(`https://goerli.etherscan.io/tx/${nftTx.tx}`)
+
+        alert(`Minting is Successful!`);
+
       }).catch(function (err) {
         console.log(err.message);
+
       });
     });
   },
-
 };
 
 
