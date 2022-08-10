@@ -77,7 +77,6 @@ App = {
     $(document).on('click', '.btn-mint', App.handleMint);
   },
 
-
   handleMint: function (event) {
     event.preventDefault();
 
