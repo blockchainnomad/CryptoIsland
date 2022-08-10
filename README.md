@@ -25,9 +25,7 @@ CryptoIsland 디렉토리에서
 
 1. yarn install로 node_modules 패키지 설치하기
 
-2. .secret 파일 생성 후 mnemonic 입력하기
+2. .secret 파일 생성 후 mnemonic, etherscan, rpc 입력하기
 
-3. truffle-confing.js에서 rpc 수정하기
-
-4. yarn start로 로컬 서버 시작하기
+3. yarn start로 로컬 서버 시작하기
 
