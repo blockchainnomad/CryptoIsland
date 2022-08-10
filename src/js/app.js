@@ -10,8 +10,8 @@ App = {
 
       for (i = 0; i < data.length; i++) {
         artTemplate.find('.panel-title').text(data[i].name);
-        artTemplate.find('img').attr('src', data[i].picture);
-        artTemplate.find('.btn-mint').attr('data-id', data[i].id);
+        artTemplate.find('img').attr('src', data[i].image);
+        artTemplate.find('.btn-mint').attr('data-id', data[i].tokenId);
 
         artsRow.append(artTemplate.html());
       }
@@ -55,7 +55,7 @@ App = {
       console.log(error)
     }
     window.ethereum.on('chainChanged', (chainId) => {
-      console.log(chainId) // 0x5 if it's Goerli
+      console.log(chainId) // 0x5 = Goerli
     })
     return await App.initContract();
   },
@@ -77,13 +77,13 @@ App = {
     $(document).on('click', '.btn-mint', App.handleMint);
   },
 
-  
+
   handleMint: function (event) {
     event.preventDefault();
-    
+
     // 버튼을 클릭하면 id를 가져와서 artId 변수에 저장한다.
-    const artId = parseInt($(event.target).data('id'));
-    
+    const tokenId = parseInt($(event.target).data('id'));
+
     // NFT를 요청한다.
     let Instance;
 
@@ -92,23 +92,23 @@ App = {
       if (error) {
         console.log(error);
       }
-      
+
       let account = accounts[0];
-      
+
       App.contracts.CryptoIsland.deployed().then(async function (instance) {
         Instance = instance;
-        
-        // 10000000000000000 wei = 0.01 eth
-        let nftTx = await Instance.mintNFTs(1, { from: account, value: "10000000000000000" });
-        
-        return nftTx; 
-        
-      }).then(function (nftTx) {
-        console.log('artId', artId)
 
-        // // 민팅된 작품의 버튼은 Minted 표시로 바꾼다. 버튼 순서는 artId에 따른다.
-        $('.panel-body').eq(artId).find('button').text('Minted').attr('disabled', true);
-        
+        // 10000000000000000 wei = 0.01 eth
+        let nftTx = await Instance.safeMint(account, { from: account });
+
+        return nftTx;
+
+      }).then(function (nftTx) {
+        console.log('tokenId', tokenId)
+
+        // // 민팅된 작품의 버튼은 Minted 표시로 바꾼다. 버튼 순서는 tokenId에 따른다.
+        $('.panel-body').eq(tokenId).find('button').text('Minted').attr('disabled', true);
+
         console.log(`https://goerli.etherscan.io/tx/${nftTx.tx}`)
 
         alert(`Minting is Successful!`);
