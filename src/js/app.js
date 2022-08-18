@@ -34,7 +34,9 @@ App = {
     }
     // 메타마스크가 설치되지 않았을 경우 경고창 실행
     else {
-      alert('Please Install Metamask.')
+      setTimeout(function () {
+        alert('Please Install Metamask.')
+      }, 5000)
     }
     web3 = new Web3(App.web3Provider);
     
